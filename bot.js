@@ -92,7 +92,7 @@ bot.on("message", function(message) {
   if (message.content === (prefix + "f")){
   	bot.sendMessage(msg.channel, msg.author + " has paid respects.");
   }
-  if (message.content ===(prefix + "meow" + suffix )){
+  if (message.content ===(prefix + "meow" , suffix )){
       var conv = suffix.split(" ");
       talkbot.write(conv, function(response){
  bot.sendMessage(message.channel, response.message);
