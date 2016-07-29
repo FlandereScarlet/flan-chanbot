@@ -46,9 +46,6 @@ bot.on("message", function(message) {
         bot.reply(message, "***MY CURRENT PREFIX IS*** `" + prefix + "`!");
     }
 
-	if(message.content === (prefix + "f") {
-		bot.sendMessage(message, message.author + " Has paid respects!");
-	}
     if(message.content === (prefix + "help")) {
         bot.sendMessage(message, "**Flandre Scarlet**: An open source bot made for anybody by Flandre Scarlet!\n\nMy current prefix is `" + prefix + "`\n**CURRENT COMMANDS**" + commandsList);
     }
@@ -82,7 +79,9 @@ bot.on("message", function(message) {
     } else if(message.content === (prefix + "config")) {
     	bot.reply(message, "❌ | Either you havent added yourself to the adminList variable...or you're a regular user not in the ADMINLIST. Ask the owner of the server to admin you if you're server staff!")
     }
-
+  if (message.content === (prefix + "f")){
+  	bot.sendMessage(message.channel, message.author + " has paid respects.");
+  }
 });
 
 
