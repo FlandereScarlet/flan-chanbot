@@ -93,6 +93,7 @@ bot.on("message", function(message) {
   	bot.sendMessage(msg.channel, msg.author + " has paid respects.");
   }
   if (message.content ===(prefix + "meow" , suffix )){
+      var suffix = args.split('');
       var conv = suffix.split(" ");
       talkbot.write(conv, function(response){
  bot.sendMessage(message.channel, response.message);
