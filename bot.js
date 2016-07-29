@@ -2,8 +2,18 @@
 
 try {
 	var Discord = require("discord.js");
-} catch (e) {
+} catch (err) {
+	console.log(err.stack);
+	console.log(process.version);
 	console.log("You need to install discord.js!!!");
+	process.exit(1) //exit with code 1
+}
+try{
+    var cleverbot = require("cleverbot-node");
+talkbot = new cleverbot;
+cleverbot.prepare(function(){});
+} catch (err) {
+ console.log (`${err.stack}`);
 }
 
 var botConfiguration = require("./botConfig.json");
@@ -81,6 +91,13 @@ bot.on("message", function(message) {
     }
   if (message.content === (prefix + "f")){
   	bot.sendMessage(message.channel, message.author + " has paid respects.");
+  }
+  if (message.content ===(prefix + "meow" , suffix )){
+      var suffix = args.split('');
+      var conv = suffix.split(" ");
+      talkbot.write(conv, function(response){
+ bot.sendMessage(message.channel, response.message);
+      })
   }
 });
 
