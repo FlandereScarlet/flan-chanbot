@@ -6,8 +6,6 @@ try {
 	console.log("You need to install discord.js!!!");
 }
 
-
-var Discord = require("discord.js");
 var botConfiguration = require("./botConfig.json");
 var prefix = (botConfiguration.prefix);
 var commandsList = ("\n" + prefix + "ping\n" + prefix + "help\n" + prefix + "git\n" + prefix + "admintest\n" + prefix + "myinfo\n" + prefix + "config (ADMIN ONLY)\n")
@@ -48,6 +46,9 @@ bot.on("message", function(message) {
         bot.reply(message, "***MY CURRENT PREFIX IS*** `" + prefix + "`!");
     }
 
+	if(message.content === (prefix + "f") {
+		bot.sendMessage(message, message.author.name + " Has paid respects!");
+	}
     if(message.content === (prefix + "help")) {
         bot.sendMessage(message, "**Flandre Scarlet**: An open source bot made for anybody by Flandre Scarlet!\n\nMy current prefix is `" + prefix + "`\n**CURRENT COMMANDS**" + commandsList);
     }
