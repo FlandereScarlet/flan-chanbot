@@ -2,8 +2,11 @@
 
 try {
 	var Discord = require("discord.js");
-} catch (e) {
+} catch (err) {
+	console.log(e.stack);
+	console.log(process.version);
 	console.log("You need to install discord.js!!!");
+	process.exit(1) //exit with code 1
 }
 
 var botConfiguration = require("./botConfig.json");
