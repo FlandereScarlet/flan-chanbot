@@ -47,7 +47,7 @@ bot.on("message", function(message) {
     }
 
 	if(message.content === (prefix + "f") {
-		bot.sendMessage(message, message.author.name + " Has paid respects!");
+		bot.sendMessage(message, message.author + " Has paid respects!");
 	}
     if(message.content === (prefix + "help")) {
         bot.sendMessage(message, "**Flandre Scarlet**: An open source bot made for anybody by Flandre Scarlet!\n\nMy current prefix is `" + prefix + "`\n**CURRENT COMMANDS**" + commandsList);
