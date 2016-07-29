@@ -14,3 +14,7 @@
     "url": "git+https://github.com/FlandreScarlet/flan-chanbot.git"
   },
   "license": "LGPLv3",
+"dependencies": {
+  "discord.js" : "^8.0.x"
+}
+"main" : "bot.js",
