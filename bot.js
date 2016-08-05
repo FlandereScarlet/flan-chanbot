@@ -1,4 +1,4 @@
-// dont edit ANYTHING
+// don't edit ANYTHING
 try {
     var Discord = require("discord.js");
 } catch (e) {
@@ -33,7 +33,7 @@ bot.on("ready", function() {
 
 
 bot.on("message", message => {
-    // DONT EDIT ANYTHING ELSE..
+    // DON'T EDIT ANYTHING ELSE..
 
     if (message.content === prefix + "ping") {
         var pingStart = Date.now();
@@ -123,7 +123,7 @@ bot.on("message", message => {
                             var newAdminList = JSON.stringify(adminList);
                             fs.writeFile('./adminList.json', newAdminList, (writeErr) => {
                                 var addedUser = util.format("%s#%s", message.mentions[0].username, message.mentions[0].discriminator);
-                                bot.sendMessage(message, util.format("Successfully added %s to the admin list.", addedUser));
+                                bot.sendMessage(message, util.format("Successfully added %s to the Admin List.", addedUser));
                             });
                         } else {
                             bot.reply(message, "That person is already added to the Admin List.");
@@ -151,10 +151,10 @@ bot.on("message", message => {
                             var removedUser = util.format("%s#%s", message.mentions[0].username, message.mentions[0].discriminator);
                             var newAdminList = JSON.stringify(adminList);
                             fs.writeFile('./adminList.json', newAdminList, (writeErr) => {
-                                bot.sendMessage(message, util.format("Successfuly removed %s from the admin list.", removedUser));
+                                bot.sendMessage(message, util.format(":x: Successfully removed %s from the Admin List.", removedUser));
                             });
                         } else {
-                            bot.reply(mess, "That user is not in the admin list!");
+                            bot.reply(mess, "That user is not in the Admin List!");
                         }
                     } else {
                         bot.reply(message, "Please mention **1 (one)** person you wish to remove from the Admin List.");
