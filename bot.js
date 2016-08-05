@@ -57,7 +57,7 @@ bot.on("message", message => {
     }
 
     if (message.content === prefix + "myinfo") {
-        bot.sendMessage(message, "***Displaying Information for " + message.author.username + "***\n\nUser ID: " + message.author.id + "\nAvatar: " + message.author.avatarURL + "\nDiscriminator: " + message.author.discriminator + "\nPlaying: " + message.author.game.name + "\nThe voice channel you are in is..." + message.author.voiceChannel + "!");
+        bot.sendMessage(message, "***Displaying Information for " + message.author.username + "***\n\nUser ID: " + message.author.id + "\nAvatar: " + message.author.avatarURL + "\nDiscriminator: " + message.author.discriminator + "\nPlaying: " + JSON.stringify(message.author.game) + "\nThe voice channel you are in is..." + message.author.voiceChannel + "!");
     }
 
     if (message.content.startsWith(prefix + "eval ")) {
