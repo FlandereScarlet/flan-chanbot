@@ -1,4 +1,4 @@
-// dont edit ANYTHING
+// don't edit ANYTHING
 try {
     var Discord = require("discord.js");
 } catch (e) {
@@ -33,7 +33,7 @@ bot.on("ready", function() {
 
 
 bot.on("message", message => {
-    // DONT EDIT ANYTHING ELSE..
+    // DON'T EDIT ANYTHING ELSE..
 
     if (message.content === prefix + "ping") {
         var pingStart = Date.now();
@@ -44,8 +44,8 @@ bot.on("message", message => {
         })
     }
 
-    if (message.content === "<@189173793422442496> prefix") {
-        bot.reply(message, "***MY CURRENT PREFIX IS*** `" + prefix + "`!");
+    if (message.content === "<@" + bot.user.id + "> prefix") {
+        bot.reply(message, "I am currently using the prefix `" + prefix + "`!");
     }
 
     if (message.content === prefix + "help") {
@@ -57,7 +57,7 @@ bot.on("message", message => {
     }
 
     if (message.content === prefix + "myinfo") {
-        bot.sendMessage(message, "***Displaying Information for " + message.author.username + "***\n\nUser ID: " + message.author.id + "\nAvatar: " + message.author.avatarURL + "\nDiscriminator: " + message.author.discriminator + "\nPlaying: " + message.author.game.name + "\nThe voice channel you are in is..." + message.author.voiceChannel + "!");
+        bot.sendMessage(message, "***Displaying Information for " + message.author.username + "***\n\n__>User ID:__ `" + message.author.id + "`\n\n__>Avatar:__ " + message.author.avatarURL + "\n\n__>Discriminator:__ `" + message.author.discriminator + "`\n\n__>Playing:__ `" + JSON.stringify(message.author.game) + "`\n\n__>Connected to Voice Channel: __" + message.author.voiceChannel + "!");
     }
 
     if (message.content.startsWith(prefix + "eval ")) {
@@ -82,19 +82,14 @@ bot.on("message", message => {
 		});
     }
 
-    if (message.content === prefix + "admintest") {
-        fs.readFile('./adminList.json', (err,data) => {
-			if (!err) {
-            	var adminList = JSON.parse(data);
-            	if (adminList.indexOf(message.author.id) > -1) {
-                	bot.reply(message, ":white_check_mark: You are on the Admin List!");
-            	} else if (adminList.indexOf(message.author.id) === 1) {
-                	bot.reply(message, ":x: You aren't in the Admin List. Please contact the Server Owner if you are staff!");
-            	}
-			} else {
-            	bot.sendMessage(message, "Caught Error\n```\n" + err + "\n```");
-			}
-        });
+    if(message.content.toLowerCase().startsWith(prefix + "admintest")) { 
+        var Admin = require("./adminList.js");
+        var admin = new Admin('adminList');
+        if(admin.get("admins").indexOf(message.author.id) != -1) {
+            bot.reply(message, ":white_check_mark: You are on the Admin List!");
+        } else {
+            bot.reply(message, ":x: You aren't in the Admin List. Please contact the Server Owner if you are staff!");
+        }
     }
 
     if (message.content === prefix + "config") {
@@ -123,7 +118,7 @@ bot.on("message", message => {
                             var newAdminList = JSON.stringify(adminList);
                             fs.writeFile('./adminList.json', newAdminList, (writeErr) => {
                                 var addedUser = util.format("%s#%s", message.mentions[0].username, message.mentions[0].discriminator);
-                                bot.sendMessage(message, util.format("Successfully added %s to the admin list.", addedUser));
+                                bot.sendMessage(message, util.format("Successfully added %s to the Admin List.", addedUser));
                             });
                         } else {
                             bot.reply(message, "That person is already added to the Admin List.");
@@ -151,10 +146,10 @@ bot.on("message", message => {
                             var removedUser = util.format("%s#%s", message.mentions[0].username, message.mentions[0].discriminator);
                             var newAdminList = JSON.stringify(adminList);
                             fs.writeFile('./adminList.json', newAdminList, (writeErr) => {
-                                bot.sendMessage(message, util.format("Successfuly removed %s from the admin list.", removedUser));
+                                bot.sendMessage(message, util.format(":x: Successfully removed %s from the Admin List.", removedUser));
                             });
                         } else {
-                            bot.reply(mess, "That user is not in the admin list!");
+                            bot.reply(mess, "That user is not in the Admin List!");
                         }
                     } else {
                         bot.reply(message, "Please mention **1 (one)** person you wish to remove from the Admin List.");
