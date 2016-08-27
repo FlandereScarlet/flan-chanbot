@@ -29,14 +29,15 @@ function calcUptime() {
     if (days == 1) {
         dayText = " day ";
     }
-	
+
 	var upText = "Uptime: `" + days + dayText + hrs + ":" + min + ":" + sec + "`";
-	
+
     return upText;
 }
 
 // Giant ready thing
 bot.on("ready", function() {
+  require("./init_commands.js").init();
 	console.log("*- flan-chanbot: made by Flandre Scarlet -*");
 	console.log("Prefix: " + config.prefix);
 	console.log("Using Email: " + config.useEmail);
