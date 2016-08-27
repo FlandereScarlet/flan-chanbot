@@ -108,7 +108,16 @@ commands.ping = {
 		});
 	}
 }
-
+// bot time checker
+commands.date = {
+	name : "date",
+	desc: "checks what time is it on the bot",
+	longDesc: " a ``` new Date();``` demo usage.",
+	main: function (bot,msg){
+		var date = new Date();
+		bot.sendMessage(msg, date);
+	}
+}
 // Uptime
 commands.uptime = {
 	name: "uptime",
