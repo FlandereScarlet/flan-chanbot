@@ -1,9 +1,12 @@
 {
-	"token": "token", 
-	"prefix": "?",
+	"token": "MjEzNjM3NDQ2Nzc5NDA0Mjg4.Co9VUA.svQMoe7yEUDzYDVyrX7ZG24g6TI", 
+	"prefix": "|",
 	"useEmail": false,
 	"email": "email",
 	"password": "password",
-	"log": false,
-	"logchannel": ""
+	"botName": "flan-testbed",
+	"botDesc": "an experimental version of Flan-Chanbot(sr229's branch).",
+	"ownerID": "156324425673736192",
+	"log": true,
+	"logchannel": "212554628255055872"
 }

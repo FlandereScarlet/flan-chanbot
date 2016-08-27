@@ -4,11 +4,10 @@
 
 # Pull Requests
 
-- your PRs from your forks should be always using the latest development code.
+- your PRs from your forks should be always using the latest code from master(otherwise, prepare for the most cryptic shit that ever happened, a git conflict).
 - make sure it doesn't conflict with the other Pull Requests.
 
 # the <Unspoken> Extra guidlines...
 
 - you can meme in your commits/PRs (although don't go full weeb or the Romaji/Kanji is going to the trash bin).
-- Comments can be formatted the way library devs does on their code (i.e made by someone who sucks at CS:GO is a good reminder to everyone :^)).
-- :eyes: Antony pls.
+- Comments can also contain memes, but keep the comments maintain their original purpose: to make ppl understand a certain medthod.
