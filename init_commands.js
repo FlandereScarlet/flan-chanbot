@@ -90,5 +90,5 @@ function load_plugins(){
             }
         }
     }
-    console.log("Loaded " + dbot.commandCount() + " chat commands type |help in Discord for a commands list.");
+    console.log("Loaded " + dbot.commandCount() + " chat commands type <Prefix> + help in Discord for a commands list.");
 }

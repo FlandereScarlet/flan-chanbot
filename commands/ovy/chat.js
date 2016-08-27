@@ -1,19 +1,20 @@
 exports.commands = [
-	"talk"
-]
+    "talk"
+];
 
 var cleverbot = require("cleverbot-node");
 talkbot = new cleverbot;
-cleverbot.prepare(function(){});
+cleverbot.prepare(function() {});
 
 exports.talk = {
-	usage : "<message>",
-	desc: "Talk directly to the bot",
+	 name : "talk",
+    usage: "<message>",
+    desc: "Talk directly to the bot",
     longDesc: "talk to the bot",
-	main : function(bot,msg, suffix) {
-			var conv = msg.content.split(" ");
-			talkbot.write(conv, function (response) {
-			bot.sendMessage(msg.channel, response.message)
-			})
-	}
+    main: function(bot, msg, suffix) {
+			 var conv = msg.content.split(" ");
+        talkbot.write(conv, function(response) {
+            bot.sendMessage(msg.channel, response.message)
+        })
+    }
 }
