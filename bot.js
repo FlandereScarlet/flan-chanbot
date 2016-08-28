@@ -37,7 +37,7 @@ function calcUptime() {
 
 // Giant ready thing
 bot.on("ready", function() {
-  require("./init_commands.js").init();
+  req("./init_commands.js").init();
 	console.log("*- flan-chanbot: made by Flandre Scarlet -*");
 	console.log("Prefix: " + config.prefix);
 	console.log("Using Email: " + config.useEmail);
