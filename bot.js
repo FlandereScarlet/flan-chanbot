@@ -396,6 +396,9 @@ bot.on('message', msg => {
 		var cmd = noPrefixSplit[0];
 		var preArgs = msg.content.substring(prefix.length + noPrefixSplit[0], msg.content.length);
 		var args = preArgs.split(" ");
+		var preSuffix = msg.content.substring(prefix.length + noPrefixSplit[0], msg.content.length);
+		var suffix = preSuffix.split(" ");
+		suffix.split();
 		args.shift();
 		if (commands[cmd] !== undefined) {
 			if (commands[cmd].adminOnly) {
