@@ -12,7 +12,7 @@ exports.talk = {
     desc: "Talk directly to the bot",
     longDesc: "talk to the bot",
     main: function(bot, msg, suffix) {
-			 var conv = msg.content.split(" ");
+			 var conv = suffix.split(" ");
         talkbot.write(conv, function(response) {
             bot.sendMessage(msg.channel, response.message)
         })
