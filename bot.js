@@ -58,6 +58,19 @@ bot.on("ready", function() {
 
 // Commands
 var commands = {};
+exports.addCommand = function(commandName, commandObject){
+	try {
+		commands[commandName] = commandObject;
+	} catch(err){
+		console.log(err);
+	}
+}
+exports.commandCount = function(){
+	return Object.keys(commands).length;
+}
+;
+
+//TODO: find a way to make them extensible
 
 // Help
 commands.help = {
