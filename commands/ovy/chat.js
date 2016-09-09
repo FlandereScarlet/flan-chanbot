@@ -1,9 +1,10 @@
+"use strict";
 exports.commands = [
     "talk"
 ];
 
 var cleverbot = require("cleverbot-node");
-talkbot = new cleverbot();
+var talkbot = new cleverbot();
 cleverbot.prepare(function() {});
 
 exports.talk = {

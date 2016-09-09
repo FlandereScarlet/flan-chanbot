@@ -1,3 +1,4 @@
+"use strict";
 // Dependencies
 var discord = require("discord.js");
 var fs = require('fs');
