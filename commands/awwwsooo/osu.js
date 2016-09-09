@@ -5,9 +5,17 @@ exports.commands = [
   "taiko",
   "ctb"
 ];
+
 var Nodesu = require("nodesu");
+
+try {
+  //try getting the API key.
 var config = require("./botConfig.json")
 var api = new Nodesu.client(config.osuApiKey);
+}catch(err){
+  //throw an error if a error within Nodesu or this script arises. log on console effectively.
+  console.log(err.stack);
+}
 
 exports.osu = {
   name : "osu",
