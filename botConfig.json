@@ -8,6 +8,6 @@
 	"botName": "default-name", //appname
 	"botDesc": "default-description", //appdesc
 	"ownerID": "",//owner ID. must be a valid snowflake.
-	"log": false,
-	"logchannel": ""
+	"log": false, //boolean. set to true to log msgs.
+	"logchannel": "" //snowflake ID for channel
 }

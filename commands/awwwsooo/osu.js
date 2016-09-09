@@ -16,5 +16,13 @@ exports.osu = {
     api.user.get(user , Nodesu.Mode.osu).then(data => bot.sendMessage(msg, data));
   }
 }
+exports.ctb = {
+  name: "ctb",
+  desc: "your osu!ctach stats",
+  main: function (bot,msg,suffix){
+       var user = suffix.split("");
+    api.user.get(user , Nodesu.Mode.ctb).then(data => bot.sendMessage(msg, data));
+  }
+}
 
   
