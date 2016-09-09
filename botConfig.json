@@ -1,5 +1,5 @@
 {
-	"token": "", // Bot Token
+	"token": "Bot <rpelace this with token>", // Bot Token
 	"osuApiKey": "", // your osu! API key
 	"prefix": "?", //prefix
 	"useEmail": false, //boolean. set to true to be on userbot mode. set to false for clientmode. 
