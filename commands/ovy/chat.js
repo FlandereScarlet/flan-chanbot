@@ -3,7 +3,7 @@ exports.commands = [
 ];
 
 var cleverbot = require("cleverbot-node");
-talkbot = new cleverbot;
+talkbot = new cleverbot();
 cleverbot.prepare(function() {});
 
 exports.talk = {
