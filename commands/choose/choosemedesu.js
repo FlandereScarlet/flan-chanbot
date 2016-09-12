@@ -4,8 +4,9 @@ exports.commands = [
   exports.choose = {
     usage : "<option(minimum of 2)>",
     description : "just like decide, only it selects through a set of given parameters.",
-    process : function (bot,msg,suffix) {
-Array.prototype.random = function() {return this[Math.floor(Math.random()*this.length)];};
-       bot.sendMessage(msg, `i choose ${message.content.split(";").random()}`);
+    process : function (bot,msg,suffix){
+        var textt = message.slice(8);
+        var text = textt.split(';')
+        var url = text[math.floor(text.length * Math.random())];
+        bot.sendMessage(msg.channel, msg.author, " I choose.. : " `**` + url + `!**`);
     }
-  };
