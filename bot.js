@@ -89,7 +89,7 @@ commands.help = {
 					var command = util.format("**%s %s** - %s\n", commands[cmd].name, commands[cmd].usage, commands[cmd].desc);
 					helpThing += command;
 				} else {
-					var command = util.format("**%s** - %s\n", commands[cmd].name, commands[cmd].desc);
+					var  command = util.format("**%s** - %s\n", commands[cmd].name, commands[cmd].desc);
 					helpThing += command;
 				}
 			}
