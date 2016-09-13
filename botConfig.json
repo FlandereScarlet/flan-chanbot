@@ -1,13 +1,13 @@
 {
-	"token": "Bot <rpelace this with token>", // Bot Token
-	"osuApiKey": "", // your osu! API key
-	"prefix": "?", //prefix
-	"useEmail": false, //boolean. set to true to be on userbot mode. set to false for clientmode. 
-	"email": "email", //bot email
-	"password": "password", //bot password
-	"botName": "default-name", //appname
-	"botDesc": "default-description", //appdesc
-	"ownerID": "",//owner ID. must be a valid snowflake.
-	"log": false, //boolean. set to true to log msgs.
-	"logchannel": "" //snowflake ID for channel
+	"token": "Bot <rpelace this with token>", 
+	"osuApiKey": "", 
+	"prefix": "?", 
+	"useEmail": false, 
+	"email": "email", 
+	"password": "password",
+	"botName": "default-name", 
+	"botDesc": "default-description", 
+	"ownerID": "",
+	"log": false, 
+	"logchannel": "" 
 }
