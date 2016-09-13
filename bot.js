@@ -1,3 +1,4 @@
+"use strict";
 // Dependencies
 var discord = require("discord.js");
 var fs = require('fs');
@@ -29,14 +30,15 @@ function calcUptime() {
     if (days == 1) {
         dayText = " day ";
     }
-	
+
 	var upText = "Uptime: `" + days + dayText + hrs + ":" + min + ":" + sec + "`";
-	
+
     return upText;
 }
 
 // Giant ready thing
 bot.on("ready", function() {
+  require("./init_commands.js").init();
 	console.log("*- flan-chanbot: made by Flandre Scarlet -*");
 	console.log("Prefix: " + config.prefix);
 	console.log("Using Email: " + config.useEmail);
@@ -57,6 +59,19 @@ bot.on("ready", function() {
 
 // Commands
 var commands = {};
+exports.addCommand = function(commandName, commandObject){
+	try {
+		commands[commandName] = commandObject;
+	} catch(err){
+		console.log(err);
+	}
+}
+exports.commandCount = function(){
+	return Object.keys(commands).length;
+}
+;
+
+//TODO: find a way to make them extensible
 
 // Help
 commands.help = {
@@ -74,7 +89,7 @@ commands.help = {
 					var command = util.format("**%s %s** - %s\n", commands[cmd].name, commands[cmd].usage, commands[cmd].desc);
 					helpThing += command;
 				} else {
-					var command = util.format("**%s** - %s\n", commands[cmd].name, commands[cmd].desc);
+					var  command = util.format("**%s** - %s\n", commands[cmd].name, commands[cmd].desc);
 					helpThing += command;
 				}
 			}
@@ -107,7 +122,16 @@ commands.ping = {
 		});
 	}
 }
-
+// bot time checker
+commands.date = {
+	name : "date",
+	desc: "checks what time is it on the bot",
+	longDesc: " a ``` new Date();``` demo usage.",
+	main: function (bot,msg){
+		var date = new Date();
+		bot.sendMessage(msg, date);
+	}
+}
 // Uptime
 commands.uptime = {
 	name: "uptime",
@@ -386,6 +410,9 @@ bot.on('message', msg => {
 		var cmd = noPrefixSplit[0];
 		var preArgs = msg.content.substring(prefix.length + noPrefixSplit[0], msg.content.length);
 		var args = preArgs.split(" ");
+		var preSuffix = msg.content.substring(prefix.length + noPrefixSplit[0], msg.content.length);
+		var suffix = preSuffix.split(" ");
+		suffix.split();
 		args.shift();
 		if (commands[cmd] !== undefined) {
 			if (commands[cmd].adminOnly) {

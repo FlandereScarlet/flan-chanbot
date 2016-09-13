@@ -1,12 +1,13 @@
 {
-	"token": "", 
-	"prefix": "?",
-	"useEmail": false,
-	"email": "email",
+	"token": "Bot <rpelace this with token>", 
+	"osuApiKey": "", 
+	"prefix": "?", 
+	"useEmail": false, 
+	"email": "email", 
 	"password": "password",
-	"botName": "default-name",
-	"botDesc": "default-description",
+	"botName": "default-name", 
+	"botDesc": "default-description", 
 	"ownerID": "",
-	"log": false,
-	"logchannel": ""
+	"log": false, 
+	"logchannel": "" 
 }
