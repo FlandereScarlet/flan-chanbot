@@ -9,5 +9,6 @@ exports.commands = [
         var textt = message.slice(8);
         var text = textt.split(';')
         var url = text[math.floor(text.length * Math.random())];
-        bot.sendMessage(msg.channel, msg.author, " I choose.. : " `**` + url + `!**` +);
+        bot.sendMessage(msg.channel, msg.author, " I choose.. : " `**` + url + `!**` );
     }
+  }
